@@ -21,7 +21,7 @@ end
 		@image_url = image["images"]["standard_resolution"]["url"]
 		@username = image["user"]["username"]
 		@likes = image ["likes"]["count"]
-		all_images << {image: @image_url, user: @username, likes: @likes}
+		@all_images << {image: @image_url, user: @username, likes: @likes}
 	end
 
 # Running the program
@@ -32,12 +32,12 @@ puts "Welcome to Instagram, what is your name?"
 name = get_input
 puts "Hi #{name}, would you like to check out the latest instagram images? Y/N"
 response = get_input
-	if response==Y 
+	if response == "Y" 
 		loop do |image|
 			break if @counter == @all_images.length
-			@image.each
-			puts "Image: #{image_url}, By #{username}, Likes: #{likes}"
-			@counter += 1
+			@all_images.each
+			puts "Image: #{@image_url}, By #{@username}, Likes: #{@likes}"
+			@counter + 1
 		end
 	else put "Come back soon and check them out later!"
 	end 
